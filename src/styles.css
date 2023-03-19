@@ -10,8 +10,33 @@
 .crypto-tracker {
   background-color: #f7f7f7;
   font-family: var(--font-family);
-  border: 4px solid var(--primary-color);
+  border: 10px solid var(--primary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: 400% 400%;
 }
+
+@keyframes bitcoin-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
 
 input[type="text"] {
   padding: 10px;
@@ -44,6 +69,28 @@ input[type="text"] {
   
 }
 
+#crypto-table {
+  margin: 2rem auto;
+  width: 50%;
+  border-collapse: collapse;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #000000; /* add a border to the table */
+
+}
+
+#crypto-table th {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem 0;
+  border: 1px solid #000000;
+}
+#crypto-table td {
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #000000;
+}
+
 
 h1 {
   font-size: 3rem;
@@ -65,7 +112,7 @@ table {
 }
 
 th {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
   padding: 1rem 0;
@@ -106,11 +153,56 @@ button:hover {
     font-size: 1.2rem;
   }
   th {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   td {
     font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+
+
   }
+  .input-container {
+    display: flex;
+    flex-direction: column; /* change from row to column */
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column; /* change from row to column */
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 0rem;
+    margin: 0 1rem;
+    margin-bottom: 0rem; /* add margin bottom to make input groups closer together */
+    margin-top: 0rem; /* add margin top to separate from the previous input group */
+    width: 80%; /* set a width to make it fit on smaller screens */
+  }
+  #crypto-table {
+    margin: 2rem auto;
+    width: 90%;
+    border-collapse: collapse;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #000000; /* add a border to the table */
+
+  }
+  
+  #crypto-table th {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0;
+    border: 1px solid #000000;
+  }
+  #crypto-table td {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #000000;
+  }
+  
 }
 
 .table-row {
@@ -122,3 +214,5 @@ button:hover {
 .fade-out {
   animation-name: fade-out;
 }
+
+
